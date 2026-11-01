@@ -1,0 +1,6 @@
+# Compiled by Ren'Py when the game runs
+*.rpyc
+# Logs
+a11y_log.txt
+# Release builds
+dist/

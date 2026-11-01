@@ -1,0 +1,18 @@
+{
+  "manifestVersion": 1,
+  "kind": "game",
+  "id": "pale-spectrum",
+  "name": "Pale Spectrum - Part Two of the Book of Gray Magic",
+  "detect": {
+    "steam": {
+      "appId": 554180,
+      "dirName": "Pale Spectrum - Part Two of the Book of Gray Magic"
+    },
+    "markers": [
+      "Pale Spectrum.exe"
+    ]
+  },
+  "userData": {
+    "windows": "${appData}/RenPy/Pale Spectrum Saves"
+  }
+}

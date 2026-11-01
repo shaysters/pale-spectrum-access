@@ -1,0 +1,71 @@
+{
+  "manifestVersion": 1,
+  "id": "pale-spectrum-access",
+  "name": "Pale Spectrum Access",
+  "description": "Screen reader and text-to-speech accessibility for Pale Spectrum - Part Two of the Book of Gray Magic. Reads dialogue, narration, choices and every menu, makes everything usable from the keyboard, and describes the gallery pictures.",
+  "authors": [
+    "Shaysters",
+    "Claude"
+  ],
+  "game": "pale-spectrum",
+  "distributions": {
+    "steam": "supported",
+    "itch": "untested",
+    "standalone": "untested"
+  },
+  "channels": {
+    "stable": {
+      "source": "release"
+    }
+  },
+  "install": [
+    {
+      "step": "extract-archive",
+      "routes": [
+        {
+          "from": "game/**",
+          "to": "${gameDir}/game"
+        },
+        {
+          "from": "prism.dll",
+          "to": "${gameDir}/prism.dll"
+        },
+        {
+          "from": "prism_licenses/**",
+          "to": "${gameDir}/prism_licenses"
+        }
+      ]
+    },
+    {
+      "step": "expect",
+      "checks": [
+        {
+          "fileExists": "${gameDir}/game/zz_ps_a11y_core.rpy",
+          "message": "The download didn't contain the mod (no zz_ps_a11y_core.rpy)."
+        },
+        {
+          "fileExists": "${gameDir}/prism.dll",
+          "message": "The download didn't contain the speech library (no prism.dll)."
+        }
+      ]
+    }
+  ],
+  "uninstall": [
+    {
+      "step": "delete-files",
+      "paths": [
+        "${gameDir}/game/zz_ps_a11y_core.rpyc",
+        "${gameDir}/game/zz_ps_a11y_screens.rpyc",
+        "${gameDir}/game/zz_ps_a11y_descriptions.rpyc",
+        "${gameDir}/a11y_log.txt"
+      ]
+    }
+  ],
+  "packaging": {
+    "artifacts": [
+      {
+        "file": "../dist/PaleSpectrumAccess.zip"
+      }
+    ]
+  }
+}

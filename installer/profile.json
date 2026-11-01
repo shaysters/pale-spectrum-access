@@ -1,0 +1,9 @@
+{
+  "mode": "single-mod",
+  "mod": "pale-spectrum-access",
+  "title": "Pale Spectrum Access Installer",
+  "registries": [
+    "github:shaysters/pale-spectrum-access"
+  ],
+  "lockRegistries": true
+}
